@@ -49,10 +49,10 @@ All the same options are available to the CLI.
 
 ```sh
 # Download data for a user to a directory using an API token
-instagram-download --token=TOKEN --user=USER --dir=DIR [--refresh --full]
+instagram-dl --token=TOKEN --user=USER --dir=DIR [--refresh --full]
 
 # Read previously downloaded data for a user from a directory
-instagram-download --read --user=USER --dir=DIR
+instagram-dl --read --user=USER --dir=DIR
 ```
 
 
@@ -86,7 +86,7 @@ Note that as of June 1, 2016 API requests can no longer be made with using an ap
 
 #### `refresh` (boolean, optional, default `false`)
 
-By default running `instagram-download` again will start after the most recent Instagram post that was downloaded previously, so that you can easily only fetch the latest Instagram data. Use the `refresh` option to overwrite all the existing Instagram data. Note that Instagram photos are never redownloaded because they should never change after being posted.
+By default running `instagram-dl` again will start after the most recent Instagram post that was downloaded previously, so that you can easily only fetch the latest Instagram data. Use the `refresh` option to overwrite all the existing Instagram data. Note that Instagram photos are never redownloaded because they should never change after being posted.
 
 #### `full` (boolean, optional, default `false`)
 
@@ -168,6 +168,32 @@ DEBUG=instagram-dl:download instagram-dl ...
 DEBUG=instagram-dl:download,instagram-dl:api instagram-dl ...
 ```
 
+
+## API Endpoints
+`/instagram/image`
+
+Type    : GET
+
+Param   : url
+
+
+`/instagram/video`
+
+Type    : GET
+
+Param   : url
+
+
+ex: `localhost:8080/instagram/video?url=https://www.instagram.com/p/BcZD7fbDV_R/`
+resposnse:
+```json
+{
+    "title": "Instagram post by p l s u r • Dec 7, 2017 at 6:53am UTC",
+    "url": "https://www.instagram.com/p/BcZD7fbDV_R/",
+    "file": "video",
+    "video_link": "https://instagram.fcok1-1.fna.fbcdn.net/vp/53043bd2781/5A2FB313/t50.2886-16/2500153488_n.mp4"
+}
+```
 
 ## Contributing
 
