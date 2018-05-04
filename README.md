@@ -141,9 +141,9 @@ Since the Instagram API now requires an access token for all requests, this modu
 ![client screenshot](https://cldup.com/iBc4vAbLcc.png)
 3. Run this command using your client ID and secret. This will open a browser window and prompt you to login to Instagrama and approve your application to access your account. By default the access token will have a scope for `basic` and `public_content`. See the Instagram API docs for [other possible scopes](https://www.instagram.com/developer/authorization/).
 ```sh
-instagram-download --get_token --client=ID --secret=SECRET
+instagram-dl --get_token --client=ID --secret=SECRET
 # Or to request other scopes
-instagram-download --get_token --client=ID --secret=SECRET --scope=basic --scope=likes --scope=comments
+instagram-dl --get_token --client=ID --secret=SECRET --scope=basic --scope=likes --scope=comments
 ```
 4. The access token will be printed to the CLI and opened browser window once authorization is complete.
 
